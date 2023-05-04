@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Recipe } from '../recipes.model';
 
 @Component({
@@ -7,16 +7,21 @@ import { Recipe } from '../recipes.model';
   styleUrls: ['./recipe-list.component.css'],
 })
 export class RecipeListComponent {
+  @Output() selectedRecipe = new EventEmitter<Recipe>();
+  onRecipeSelect(recipe: Recipe) {
+    this.selectedRecipe.emit(recipe);
+  }
   recipe: Array<Recipe> = [
     new Recipe(
-      'Test name',
-      'Test desc',
+      'My first recipe',
+      'Dont mind the description',
       'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg'
     ),
     new Recipe(
-      'Test name',
-      'Test desc',
+      'Second recipe',
+      'I love pizza',
       'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg'
     ),
   ];
+  constructor() {}
 }
