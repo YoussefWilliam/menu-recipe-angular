@@ -23,15 +23,17 @@
       </button>
       <ul class="dropdown-menu">
         <li>
-          <a (click)="handleAddingIngredients()" href="#"
+          <a (click)="handleAddingIngredients()" style="cursor: pointer"
             >Add ingredients to shopping list</a
           >
         </li>
         <li>
-          <a href="#">Edit Recipe</a>
+          <a style="cursor: pointer" (click)="handleOnEditRecipeClick()"
+            >Edit Recipe</a
+          >
         </li>
         <li>
-          <a href="#">Delete Recipe</a>
+          <a style="cursor: pointer">Delete Recipe</a>
         </li>
       </ul>
     </div>

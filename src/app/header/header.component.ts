@@ -7,7 +7,4 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent {
   @Output() loadedSection = new EventEmitter<string>();
-  onSelect(arg: string) {
-    this.loadedSection.emit(arg);
-  }
 }
